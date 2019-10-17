@@ -28,6 +28,16 @@
       onConversationsAPIReady();
     } else {
       console.log('otriytiotrjy')
+
+
+      window.hsConversationsSettings = {
+        loadImmediately: false,
+        isFullscreen: true,
+      };
+
+      /* ... */
+
+      window.HubSpotConversations.widget.load();
       /*
         Otherwise, callbacks can be added to the hsConversationsOnReady on the window object.
         These callbacks will be called once the external API has been initialized.
