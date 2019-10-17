@@ -16,8 +16,17 @@
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scriptsqa.com/99715584.js"></script>
   <!-- End of HubSpot Embed Code -->
   <script type="text/javascript">
+    console.log(`HubSpot Conversations API: ${window.HubSpotConversations}`);
     function onConversationsAPIReady() {
-      console.log(`HubSpot Conversations API: ${window.HubSpotConversations}`);
+
+      window.hsConversationsSettings = {
+        loadImmediately: false,
+        isFullscreen: true,
+      };
+
+      /* ... */
+
+      window.HubSpotConversations.widget.load();
     }
 
     /*
@@ -29,15 +38,6 @@
     } else {
       console.log('otriytiotrjy')
 
-
-      window.hsConversationsSettings = {
-        loadImmediately: false,
-        isFullscreen: true,
-      };
-
-      /* ... */
-
-      window.HubSpotConversations.widget.load();
       /*
         Otherwise, callbacks can be added to the hsConversationsOnReady on the window object.
         These callbacks will be called once the external API has been initialized.
