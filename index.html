@@ -18,8 +18,13 @@
 
       window.hsConversationsSettings = {
         loadImmediately: false,
-        isFullscreen: true,
       };
+
+      window.addEventListener('beforeunload', function (e) {
+        if (window.HubSpotConversations) {
+          window.HubSpotConversations.clear();
+        }
+      });
 
       /* ... */
 
